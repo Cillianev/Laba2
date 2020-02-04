@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+	font-family: sans-serif;
+}
+/*
+Yellow: ffb135
+red: db4e4e
+dark: 043232
+blue: 336a7c
+green: 86c16e
+*/
+.game{
+	display: block;
+	margin: 0 auto;
+	background-image: url("../images/bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
