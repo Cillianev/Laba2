@@ -14,10 +14,32 @@ if(isset($_POST['name']) && $_POST['name'] !=""):
     "thirsty"
   );
 
-  //random word from the array
-  //letter count
-  //session array for the game data
-  
+  $random_word = array_rand($words, 1);
+  $letter_count = strlen($words[$random_word]);
+  $letter_dashes = "";
+  for($i=0; $i < $letter_count; $i++){
+    $letter_dashes .= "_ ";
+  }
+
+  $total_life = "_ _ _ _ _ _";
+
+  $_SESSION['wordToGuess'] = $words[$random_word];
+  $_SESSION['wordToGuessArray'] = array();
+  $_SESSION['wordToGuessLetterCount'] = $letter_count;
+  for($i=0; $i< $letter_count; $i++){
+    $_SESSION['wordToGuessArray'][] = "_";
+  }
+  $_SESSION['totalLife'] = 6;
+  $_SESSION['letterUsedCount'] = 0;
+  $_SESSION['letterTrueGuess'] = 0;
+  $_SESSION['letterUsed'] = array();
+  $_SESSION['letterUsed'][0] = "_";
+  $_SESSION['letterUsed'][1] = "_";
+  $_SESSION['letterUsed'][2] = "_";
+  $_SESSION['letterUsed'][3] = "_";
+  $_SESSION['letterUsed'][4] = "_";
+  $_SESSION['letterUsed'][5] = "_";
+
   $_SESSION['gameOver'] = false;
   
   header("Location: http://localhost/wad-2019/final/game.php");
